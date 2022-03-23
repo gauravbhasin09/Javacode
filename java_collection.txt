@@ -1,0 +1,180 @@
+1.collection framweork-The Java collections framework provides a set of interfaces and classes to implement various data structures and algorithms.
+
+2.List ,Set(Sortedset),Queue(Dequeue)
+
+3.map-sortedmap
+
+4.Iterartor-Listiterator
+
+The Collection interface is the root interface of the collections framework. The framework includes other interfaces as well: Map and Iterator. These interfaces may also have subinterfaces.
+
+5.The List interface is an ordered collection that allows us to add and remove elements like an array
+
+6.The Set interface allows us to store elements in different sets similar to the set in mathematics. It cannot have duplicate elements.
+
+7.In Java, the Map interface allows elements to be stored in key/value pairs. Keys are unique names that can be used to access a particular element in a map.
+
+8.Java Iterator Interface
+
+9.In Java, the Iterator interface provides methods that can be used to access elements of collections
+
+10.If we want our data to be unique, then we can use the Set interface provided by the collections framework.
+
+11.To store data in key/value pairs, we can use the Map interface.
+
+12.The ArrayList class provides the functionality of resizable arrays.
+Methods of Collection
+The Collection interface includes various methods that can be used to perform different operations on objects. These methods are available in all its subinterfaces.
+
+add() - inserts the specified element to the collection
+size() - returns the size of the collection
+remove() - removes the specified element from the collection
+iterator() - returns an iterator to access elements of the collection
+addAll() - adds all the elements of a specified collection to the collection
+removeAll() - removes all the elements of the specified collection from the collection
+clear() - removes all the elements of the collection
+
+Classes that Implement List
+Since List is an interface, we cannot create objects from it.
+
+In order to use functionalities of the List interface, we can use these classes:
+
+ArrayList
+LinkedList
+Vector
+Stack
+
+Java List vs. Set
+Both the List interface and the Set interface inherits the Collection interface. However, there exists some difference between them.
+
+Lists can include duplicate elements. However, sets cannot have duplicate elements.
+Elements in lists are stored in some order. However, elements in sets are stored in groups like sets in mathematics.
+
+Q1 difference between arraylist amd linkedlist.
+arraylist is fast in data indexing and ll is fast in data deletion and insertion.if want to insert data at middle then ll is more efficient.
+
+Arraylist
+
+Arraylist implements List extends Collection
+Arraylist size is dynamic and array size is static.
+loadfactor of arraylist is 0.75 and deafult size of arraylist is 10.hance when  the element is add at 7th index the size of arraylist will doubled.
+wapprerclasses are used to add data of (primictive data -into their respextive classes)
+Add elements
+Access elements
+Change elements
+Remove elements
+
+Iterate through an ArrayList
+for (String language : animals) {
+      System.out.print(language);
+
+	ArrayList							LinkedList
+Implements List interface				Implements List, Queue, and Deque interfaces.
+Stores a single value.					Stores 3 values: data, previous and next address
+Provides the functionality of a resizable array.	Provides the functionality of doubly-linked list
+
+Vector implements List extends Collections
+
+Java Vector vs. ArrayList
+In Java, both ArrayList and Vector implements the List interface and provides the same functionalities. However, there exist some differences between them.
+
+The Vector class synchronizes each individual operation. This means whenever we want to perform some operation on vectors, the Vector class automatically applies a lock to that operation.
+
+It is because when one thread is accessing a vector, and at the same time another thread tries to access it, an exception called ConcurrentModificationException is generated. Hence, this continuous use of lock for each operation makes vectors less efficient.
+
+However, in array lists, methods are not synchronized. Instead, it uses the Collections.synchronizedList() method that synchronizes the list as a whole.
+
+Stack extends Vector implements List extends Collection
+
+Stack Implementation
+
+In stack, elements are stored and accessed in Last In First Out manner. That is, elements are added to the top of the stack and removed from the top of the stack.
+Use ArrayDeque Instead of Stack
+The Stack class provides the direct implementation of the stack data structure. However, it is recommended not to use it. Instead, use the ArrayDeque class (implements the Deque interface) to implement the stack data structure in Java.
+
+
+Java Queue Interface:The Queue interface of the Java collections framework provides the functionality of the queue data structure. It extends the Collection interface.
+
+Classes that Implement Queue
+1.ArrayDeque
+2.LinkedList
+3.PriorityQueue
+
+Interfaces that extend Queue
+
+1.Deque
+2.BlockingQueue
+3.BlockingDeque
+Working of Queue Data Structure:In queues, elements are stored and accessed in First In, First Out manner. That is, elements are added from the behind and removed from the front.
+
+Queue<String> animal1 = new LinkedList<>();
+
+
+Queue<String> animal2 = new ArrayDeque<>();
+
+
+Queue<String> animal 3 = new PriorityQueue<>();
+Here, we have created objects animal1, animal2 and animal3 of classes LinkedList, ArrayDeque and PriorityQueue respectively. These objects can use the functionalities of the Queue interface
+
+1. Implementing the LinkedList Class
+Queue<integer> numbers=new LinkedList()<>;
+numbers.offer(1);
+numbers.offer(2);
+numbers.offer(3);
+2.. Implementing the PriorityQueue Class:
+Queue<Integer> numbers = new PriorityQueue<>();
+numbers.offer(5);
+        numbers.offer(1);
+        numbers.offer(2);
+
+
+3. Java PriorityQueue:The PriorityQueue class provides the functionality of the heap data structure.priorotyqueue implements queue extends collection 
+
+It is important to note that the elements of a priority queue may not be sorted. However, elements are always retrieved in sorted order.
+
+Iterating Over a PriorityQueue:To iterate over the elements of a priority queue, we can use the iterator() method. In order to use this method, we must import t
+
+Java Deque Interface:The Deque interface of the Java collections framework provides the functionality of a double-ended queue. It extends the Queue interface.
+Working of Deque:In a regular queue, elements are added from the rear and removed from the front. However, in a deque, we can insert and remove elements from both front and rear.
+Classes that implement Deque:ArrayDeque
+LinkedList
+
+Deque as Stack Data Structure
+The Stack class of the Java Collections framework provides the implementation of the stack.
+
+However, it is recommended to use Deque as a stack instead of the Stack class. It is because methods of Stack are synchronized.
+
+Here are the methods the Deque interface provides to implement stack:
+
+push() - adds an element at the beginning of deque.
+
+pop() - removes an element from the beginning of deque.
+peek() - returns an element from the beginning of deque.
+
+Java ArrayDeque:we will learn to use array deque to implement a stack.
+In Java, we can use the ArrayDeque class to implement queue and deque data structures using arrays.
+Interfaces implemented by ArrayDeque: Java Queue Interface
+Java Deque Interface
+
+
+
+ArrayDeque Vs. LinkedList Class
+Both ArrayDeque and Java LinkedList implements the Deque interface. However, there exist some differences between them.
+
+LinkedList supports null elements, whereas ArrayDeque doesn't.
+Each node in a linked list includes links to other nodes. That's why LinkedList requires more storage than ArrayDeque.
+If you are implementing the queue or the deque data structure, an ArrayDeque is likely to faster than a LinkedList.
+
+
+
+
+Java Set Interface:sets cannot contain duplicate elements.
+
+Classes that implement Set:
+HashSet
+LinkedHashSet
+EnumSet
+TreeSet
+
+Interfaces that extend Set:SortedSet
+NavigableSet
